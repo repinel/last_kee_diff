@@ -1,9 +1,38 @@
 #!/usr/bin/env ruby
 
-require 'last-kee-diff'
+require 'last_kee_diff'
 
-puts 'Starting the checker...'
+options = {}
+opt_parser = OptionParser.new do |opts|
+  opts.banner = 'Usage: last-kee-diff [options]'
 
-LastKeeDiff::PassUtil.new.diff 'a', 'b'
+  opts.separator ''
+  opts.separator 'Required options:'
 
-puts 'Done.'
+  opts.on('-l', '--last-pass [LAST_PASS_FILE]', 'The LastPass CSV file') do |last_pass_file|
+    options[:last_pass_file] = last_pass_file
+  end
+
+  opts.on('-k', '--kee-pass [KEE_PASS_FILE]', 'The KeePass XML file') do |kee_pass_file|
+    options[:kee_pass_file] = kee_pass_file
+  end
+
+  opts.separator ''
+  opts.separator 'Extra options:'
+
+  opts.on_tail('-h', '--help', 'Show this message') do
+    puts opts
+    exit
+  end
+
+  opts.on_tail('-v', '--version', 'Show version') do
+    puts LastKeeDiff::VERSION
+    exit
+  end
+end
+
+opt_parser.parse!
+
+abort opt_parser.to_s if options[:last_pass_file].nil? || options[:kee_pass_file].nil?
+
+LastKeeDiff::PassUtil.new.diff options[:last_pass_file], options[:kee_pass_file]

@@ -3,10 +3,6 @@ require 'nokogiri'
 
 module LastKeeDiff
   class PassUtil
-    def initialize
-      puts 'Initialzing...'
-    end
-
     def diff(csv_file, xml_file)
       csv_entries = read_csv csv_file
       xml_entries = read_xml xml_file
