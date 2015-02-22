@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'last-kee-diff'
+
+puts 'Starting the checker...'
+
+LastKeeDiff::PassUtil.new.diff 'a', 'b'
+
+puts 'Done.'
