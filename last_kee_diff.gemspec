@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.summary       = %q{LastPass and KeePass diff.}
-  spec.description   = %q{LastPass and KeePass diff.}
+  spec.description   = %q{Compare LastPass and KeePass entries.}
   spec.homepage      = "https://github.com/repinel/last_kee_diff"
   spec.license       = "MIT"
 
