@@ -20,7 +20,7 @@ module LastKeeDiff
 
         csv_entries[key].instance_variables.each do |att|
           att = att.to_s[1..-1]
-          if csv_entries[key].send(att).to_s != xml_entries[key].send(att).to_s
+          if csv_entries[key].send(att).to_s.sub(/^http:\/\//, '') != xml_entries[key].send(att).to_s.sub(/^http:\/\//, '')
             io.puts "\t#{att.capitalize} changed: ''#{csv_entries[key].send(att)}'' <-> ''#{xml_entries[key].send(att)}''"
           end
         end
