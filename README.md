@@ -1,28 +1,20 @@
 # LastKeeDiff
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/last_kee_diff`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem allows you to compare entries from LassPass and KeePass. It describe the differences into three groups: entries only present in LastPass, entries only present in KeePass and common entries.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'last_kee_diff'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install the gem and make the executable available:
 
     $ gem install last_kee_diff
 
 ## Usage
 
-TODO: Write usage instructions here
+*First, to void leaving your passwords vulnerable please consider keeping your exported files in an encrypted storage.*
+
+1. Export the CSV file from LassPass. Let's call it ```lass_pass.csv```.
+2. Export the XML file from KeePass. Let's call it ```kee_pass.xml```.
+3. Run ```last-kee-diff -l lass_pass.csv -k kee_pass.xml```.
 
 ## Development
 
