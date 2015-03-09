@@ -11,10 +11,12 @@ module LastKeeDiff
     end
 
     def to_s
-      %{#{self.key}
-  \tUsername: #{self.username}
-  \tPassoword: #{self.password}
-  \tURL: #{self.url}}
+      [
+        self.key,
+        "Username: #{self.username}",
+        "Password: #{self.password}",
+        "URL: #{self.url}"
+      ].join("\n\t")
     end
 
     def key
