@@ -1,0 +1,29 @@
+<database>
+  <group>
+    <title>A</title>
+    <group>
+      <title>A1</title>
+      <entry>
+        <title>Name 5</title>
+        <username>user5</username>
+        <password>password5</password>
+        <url>http://example.com/5</url>
+      </entry>
+    </group>
+    <entry>
+      <title>Name 1</title>
+      <username>user1</username>
+      <password>password1</password>
+      <url></url>
+    </entry>
+  </group>
+  <group>
+    <title>B</title>
+    <entry>
+      <title></title>
+      <username>user2</username>
+      <password>password2_</password>
+      <url>http://example.com/2-2</url>
+    </entry>
+  </group>
+</database>

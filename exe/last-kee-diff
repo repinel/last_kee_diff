@@ -35,4 +35,4 @@ opt_parser.parse!
 
 abort opt_parser.to_s if options[:last_pass_file].nil? || options[:kee_pass_file].nil?
 
-LastKeeDiff::PassUtil.new.diff options[:last_pass_file], options[:kee_pass_file]
+LastKeeDiff.diff options[:last_pass_file], options[:kee_pass_file]
