@@ -1,6 +1,7 @@
 require 'last_kee_diff/entry'
 require 'last_kee_diff/version'
 
+require 'cgi'
 require 'csv'
 require 'nokogiri'
 
@@ -54,7 +55,11 @@ module LastKeeDiff
     entries = {}
 
     CSV.foreach file_name, headers: true do |row|
-      entry = Entry.new row[5].to_s.gsub(/\\/, '/'), row[4], row[1], row[2], row[0]
+      entry = Entry.new ::CGI.unescape_html(row[5].to_s.gsub(/\\/, '/')),
+                        ::CGI.unescape_html(row[4].to_s),
+                        ::CGI.unescape_html(row[1].to_s),
+                        ::CGI.unescape_html(row[2].to_s),
+                        ::CGI.unescape_html(row[0].to_s)
       self.add_if_not_duplicated entries, entry
     end
 

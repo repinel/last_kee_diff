@@ -13,7 +13,7 @@
     <entry>
       <title>Name 1</title>
       <username>user1</username>
-      <password>password1</password>
+      <password>password&amp;1</password>
       <url></url>
     </entry>
   </group>

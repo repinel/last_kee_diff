@@ -1,5 +1,5 @@
 url,username,password,extra,name,grouping,fav
-http://,,password1,,"Name 1",A,0
+http://,,password&amp;1,,"Name 1",A,0
 http://example.com/2,user2,password2,,,B,0
 http://example.com/3,user3,password3,,"Name 3",B\B1,0
 http://example.com/4,user4,password4,,"Name 4",C,0
