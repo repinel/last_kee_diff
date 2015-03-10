@@ -9,10 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Roque Pinel"]
   spec.email         = ["repinel@gmail.com"]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
-
   spec.summary       = %q{LastPass and KeePass diff.}
   spec.description   = %q{Compare LastPass and KeePass entries.}
   spec.homepage      = "https://github.com/repinel/last_kee_diff"
